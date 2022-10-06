@@ -89,7 +89,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="..\..\..\..\OneDrive\Documents\Programme\Client.cs">
+      <Link>Client.cs</Link>
+    </Compile>
+    <Compile Include="Equipement.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
