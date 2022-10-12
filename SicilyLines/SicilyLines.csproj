@@ -89,6 +89,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categorie.cs" />
+    <Compile Include="Bateau.cs" />
+    <Compile Include="Traversee.cs" />
+    <Compile Include="Proposer.cs" />
+    <Compile Include="Contenir.cs" />
     <Compile Include="Port.cs" />
     <Compile Include="Secteur.cs" />
     <Compile Include="Liaison.cs" />

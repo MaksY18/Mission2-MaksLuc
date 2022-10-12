@@ -15,12 +15,18 @@ namespace SicilyLines
     {
         public Form1()
         {
-
-
-
-
-
             InitializeComponent();
+
+        }
+
+        private void listBoxSecteur_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxResLiaison_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
