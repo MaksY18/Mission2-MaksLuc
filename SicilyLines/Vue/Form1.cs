@@ -49,6 +49,25 @@ namespace SicilyLines
 
         }
 
+        public void afficheLiaison()
+
+        {
+            try
+            {
+                listBoxResLiaison.DataSource = null;
+                listBoxResLiaison.DataSource = sSec;
+                listBoxResLiaison.DisplayMember = "Description2";
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         private void listBoxSecteur_SelectedIndexChanged(object sender, EventArgs e)
         {
             affiche();
@@ -56,7 +75,7 @@ namespace SicilyLines
 
         private void listBoxResLiaison_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            afficheLiaison();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)

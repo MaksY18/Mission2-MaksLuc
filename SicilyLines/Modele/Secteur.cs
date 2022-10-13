@@ -32,7 +32,7 @@ namespace Connecte.Modele
 
         public string Description
         {
-            get => "Id : " + this.id + " Libelle :" + this.libelle;
+            get => "Id : " + this.id + " Libelle : " + this.libelle;
         }
     }
 }

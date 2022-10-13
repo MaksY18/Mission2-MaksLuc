@@ -37,9 +37,10 @@
             // 
             // listBoxSecteur
             // 
+            this.listBoxSecteur.BackColor = System.Drawing.SystemColors.Info;
             this.listBoxSecteur.FormattingEnabled = true;
             this.listBoxSecteur.ItemHeight = 25;
-            this.listBoxSecteur.Location = new System.Drawing.Point(55, 43);
+            this.listBoxSecteur.Location = new System.Drawing.Point(175, 53);
             this.listBoxSecteur.Name = "listBoxSecteur";
             this.listBoxSecteur.Size = new System.Drawing.Size(230, 204);
             this.listBoxSecteur.TabIndex = 0;
@@ -47,9 +48,10 @@
             // 
             // listBoxResLiaison
             // 
+            this.listBoxResLiaison.BackColor = System.Drawing.SystemColors.Info;
             this.listBoxResLiaison.FormattingEnabled = true;
             this.listBoxResLiaison.ItemHeight = 25;
-            this.listBoxResLiaison.Location = new System.Drawing.Point(442, 43);
+            this.listBoxResLiaison.Location = new System.Drawing.Point(756, 53);
             this.listBoxResLiaison.Name = "listBoxResLiaison";
             this.listBoxResLiaison.Size = new System.Drawing.Size(243, 204);
             this.listBoxResLiaison.TabIndex = 1;
@@ -57,36 +59,40 @@
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(118, 316);
+            this.btnAjouter.BackColor = System.Drawing.SystemColors.Info;
+            this.btnAjouter.Location = new System.Drawing.Point(245, 327);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(99, 35);
+            this.btnAjouter.Size = new System.Drawing.Size(120, 53);
             this.btnAjouter.TabIndex = 2;
             this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.UseVisualStyleBackColor = false;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(315, 316);
+            this.btnSupprimer.BackColor = System.Drawing.SystemColors.Info;
+            this.btnSupprimer.Location = new System.Drawing.Point(525, 327);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(114, 34);
+            this.btnSupprimer.Size = new System.Drawing.Size(128, 54);
             this.btnSupprimer.TabIndex = 3;
             this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.UseVisualStyleBackColor = false;
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(518, 316);
+            this.btnModifier.BackColor = System.Drawing.SystemColors.Info;
+            this.btnModifier.Location = new System.Drawing.Point(809, 327);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(91, 34);
+            this.btnModifier.Size = new System.Drawing.Size(126, 54);
             this.btnModifier.TabIndex = 4;
             this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnSupprimer);

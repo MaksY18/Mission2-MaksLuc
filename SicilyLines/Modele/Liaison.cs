@@ -33,5 +33,10 @@ namespace Connecte.Modele
         {
             this.duree = uneDuree;
         }
+
+        public string Description2
+        {
+            get => "Id : " + this.id + " Duree :" + this.duree;
+        }
     }
 }
