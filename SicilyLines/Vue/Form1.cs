@@ -30,6 +30,7 @@ namespace SicilyLines
           
         }
 
+        // Execution de la fonction qui affiche les secteurs
         public void affiche()
 
         {
@@ -49,6 +50,7 @@ namespace SicilyLines
 
         }
 
+        // Execution de la fonction qui affiche les liaisons
         public void afficheLiaison()
 
         {
@@ -68,6 +70,67 @@ namespace SicilyLines
 
         }
 
+        // Execution de la fonction qui ajoute un secteur
+        public void ajoutSecteur(String unLibelle)
+
+        {
+            try
+            {
+                listBoxSecteur.DataSource = null;
+                listBoxSecteur.DataSource = sSec;
+                listBoxSecteur.DisplayMember = "Description";
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        // Execution de la fonction qui supprime un secteur
+        public void supprimerSecteur(String supLibelle)
+
+        {
+            try
+            {
+                listBoxSecteur.DataSource = null;
+                listBoxSecteur.DataSource = sSec;
+                listBoxSecteur.DisplayMember = "Description";
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        // Execution de la fonction qui modifie un secteur
+        public void modifierSecteur(String nouvLibelle)
+
+        {
+            try
+            {
+                listBoxSecteur.DataSource = null;
+                listBoxSecteur.DataSource = sSec;
+                listBoxSecteur.DisplayMember = "Description";
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        // Tous les composants du Form1
         private void listBoxSecteur_SelectedIndexChanged(object sender, EventArgs e)
         {
             affiche();
@@ -80,7 +143,7 @@ namespace SicilyLines
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-
+            ajoutSecteur(textBoxLibelle.Text);
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -88,6 +151,26 @@ namespace SicilyLines
             sSec = monManager.chargementSecBD();
 
             affiche();
+        }
+
+        private void textBoxLibelle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            supprimerSecteur(textBoxLibelle.Text);
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            modifierSecteur(textBoxLibelle.Text);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

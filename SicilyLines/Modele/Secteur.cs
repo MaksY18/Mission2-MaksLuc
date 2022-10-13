@@ -30,6 +30,7 @@ namespace Connecte.Modele
             this.libelle = unLibelle;
         }
 
+        // Fonction d'affichage
         public string Description
         {
             get => "Id : " + this.id + " Libelle : " + this.libelle;

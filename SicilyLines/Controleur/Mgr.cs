@@ -22,7 +22,7 @@ namespace Connecte.Controleur
 
 
 
-        // Récupération de la liste des employés à partir de la DAL
+        // Récupération de la liste des secteurs à partir de la DAL
         public List<Secteur> chargementSecBD()
         {
 
@@ -32,7 +32,7 @@ namespace Connecte.Controleur
         }
 
 
-        // Mise à jour d'un employé  dans la DAL
+        // Mise à jour d'un secteur dans la DAL
         public void updateSecteur(Secteur s)
         {
 
