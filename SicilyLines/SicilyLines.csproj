@@ -89,29 +89,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categorie.cs" />
-    <Compile Include="Bateau.cs" />
-    <Compile Include="Traversee.cs" />
-    <Compile Include="Proposer.cs" />
-    <Compile Include="Contenir.cs" />
-    <Compile Include="Port.cs" />
-    <Compile Include="Secteur.cs" />
-    <Compile Include="Liaison.cs" />
-    <Compile Include="Periode.cs" />
-    <Compile Include="Tarifer.cs" />
-    <Compile Include="Type.cs" />
-    <Compile Include="Participer.cs" />
-    <Compile Include="Reservation.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Controleur\Mgr.cs" />
+    <Compile Include="Modele\Categorie.cs" />
+    <Compile Include="Modele\Bateau.cs" />
+    <Compile Include="DAL\secteurDAO.cs" />
+    <Compile Include="DAL\Connexion.cs" />
+    <Compile Include="Modele\Traversee.cs" />
+    <Compile Include="Modele\Proposer.cs" />
+    <Compile Include="Modele\Contenir.cs" />
+    <Compile Include="Modele\Port.cs" />
+    <Compile Include="Modele\Secteur.cs" />
+    <Compile Include="Modele\Liaison.cs" />
+    <Compile Include="Modele\Periode.cs" />
+    <Compile Include="Modele\Tarifer.cs" />
+    <Compile Include="Modele\Type.cs" />
+    <Compile Include="Modele\Participer.cs" />
+    <Compile Include="Modele\Reservation.cs" />
+    <Compile Include="Modele\Client.cs" />
+    <Compile Include="Vue\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Vue\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Vue\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -137,5 +140,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

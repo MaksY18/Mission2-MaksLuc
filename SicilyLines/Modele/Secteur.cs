@@ -4,11 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SicilyLines
+namespace Connecte.Modele
 {
-    class Secteur
+    public class Secteur
     {
+        private int id;
         private String libelle;
+        private String login;
+
+        public string Login { get => login; set => login = value; }
+        public int Id { get => id;}
+
+        public Secteur (int unId, String unLibelle)
+        {
+            this.id = unId;
+            this.libelle = unLibelle;
+        }
 
         public String getLibelle()
         {
