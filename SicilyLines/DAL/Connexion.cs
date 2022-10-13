@@ -25,8 +25,8 @@ namespace Connecte
 
             try
             {
-                connString = "SERVER=" + unProvider + "localhost" + "DATABASE=" +
-                uneDataBase + "bd-sicilylines" + "UID=root" + unUid + "root" + "PASSWORD=" + unMdp + "";
+                connString = "SERVER=" + unProvider + ";" + "DATABASE=" +
+                   uneDataBase + ";" + "UID=" + unUid + ";" + "PASSWORD=" + unMdp + ";";
                 try
                 {
                     mysqlCn = new MySqlConnection(connString);

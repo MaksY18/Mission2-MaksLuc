@@ -23,7 +23,7 @@ namespace Connecte.Controleur
 
 
         // Récupération de la liste des employés à partir de la DAL
-        public List<Secteur> chargementEmpBD()
+        public List<Secteur> chargementSecBD()
         {
 
             maListeSecteur = secteurDAO.getSecteur();

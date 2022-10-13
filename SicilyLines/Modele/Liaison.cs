@@ -8,12 +8,20 @@ namespace Connecte.Modele
 {
     class Liaison
     {
-        private int id;
+        private string id;
+        private string id_Regrouper;
+        private string id_Depart;
+        private string id_Arrivee;
+        private string id_Port;
         private String duree;
 
-        public Liaison(int unId, String uneDuree)
+        public Liaison(string unId, string unIdR, string unIdD, string unIdA, string unIdP, String uneDuree)
         {
             this.id = unId;
+            this.id_Regrouper = unIdR;
+            this.id_Depart = unIdD;
+            this.id_Arrivee = unIdA;
+            this.id_Port = unIdP;
             this.duree = uneDuree;
         }
 

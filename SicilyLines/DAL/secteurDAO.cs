@@ -11,7 +11,7 @@ namespace Connecte.DAL
 {
     public class secteurDAO
     {
-        private static string provider = "localhost";
+        private static string provider = "127.0.0.1";
 
         private static string dataBase = "bd-sicilylines";
 
@@ -92,7 +92,7 @@ namespace Connecte.DAL
                 while (reader.Read())
                 {
 
-                    int numero = (int)reader.GetValue(0);
+                    string numero = (string)reader.GetValue(0);
                     string libelle = (string)reader.GetValue(1);
 
                     //Instanciation d'un Emplye

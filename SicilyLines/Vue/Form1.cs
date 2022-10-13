@@ -25,20 +25,19 @@ namespace SicilyLines
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+          
+        }
+
         public void affiche()
 
         {
-
-
             try
             {
-
-
                 listBoxSecteur.DataSource = null;
                 listBoxSecteur.DataSource = sSec;
                 listBoxSecteur.DisplayMember = "Description";
-
-
             }
 
 
@@ -52,7 +51,7 @@ namespace SicilyLines
 
         private void listBoxSecteur_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            affiche();
         }
 
         private void listBoxResLiaison_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,6 +62,13 @@ namespace SicilyLines
         private void btnAjouter_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            sSec = monManager.chargementSecBD();
+
+            affiche();
         }
     }
 }

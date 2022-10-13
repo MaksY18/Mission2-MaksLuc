@@ -8,14 +8,14 @@ namespace Connecte.Modele
 {
     public class Secteur
     {
-        private int id;
+        private string id;
         private String libelle;
         private String login;
 
         public string Login { get => login; set => login = value; }
-        public int Id { get => id;}
+        public string Id { get => id;}
 
-        public Secteur (int unId, String unLibelle)
+        public Secteur (string unId, String unLibelle)
         {
             this.id = unId;
             this.libelle = unLibelle;
@@ -28,6 +28,11 @@ namespace Connecte.Modele
         public void setLibelle(String unLibelle)
         {
             this.libelle = unLibelle;
+        }
+
+        public string Description
+        {
+            get => "Id : " + this.id + " Libelle :" + this.libelle;
         }
     }
 }
