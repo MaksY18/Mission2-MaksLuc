@@ -10,6 +10,7 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using Connecte.Controleur;
 using Connecte.Modele;
+using Connecte.DAL;
 
 namespace SicilyLines
 {
@@ -17,6 +18,7 @@ namespace SicilyLines
     {
         Mgr monManager;
         List<Secteur> sSec = new List<Secteur>();
+        List<Liaison> sLiaison = new List<Liaison>();
 
         public Form1()
         {
@@ -52,16 +54,27 @@ namespace SicilyLines
 
         // Execution de la fonction qui affiche les liaisons
         public void afficheLiaison()
-
         {
+
+            Console.WriteLine("afficheLiaison");
             try
             {
-                listBoxResLiaison.DataSource = null;
-                listBoxResLiaison.DataSource = sSec;
-                listBoxResLiaison.DisplayMember = "Description2";
+                for (int i = 0; i < sLiaison.Count; i++)
+                {
+                    {
+                        Secteur secteurDepart = monManager.GetSecteurById(sLiaison[i].id_Depart);
+                        Secteur secteurArrivee = monManager.GetSecteurById(sLiaison[i].id_Arrivee);
+                        //string portDepart = secteurDepart.libelle;
+                        //string portArrivee = secteurArrivee.libelle;
+                        sLiaison[i].Description2 = secteurDepart.libelle + " => " + secteurArrivee.libelle;
+                    }
+                    //la ligne en dessous efface ce qui est dans la box
+                    listBoxResLiaison.DataSource = null;
+                    listBoxResLiaison.DataSource = sLiaison;
+                    listBoxResLiaison.DisplayMember = "Description2";
+                }
+
             }
-
-
             catch (Exception ex)
             {
 
@@ -133,7 +146,10 @@ namespace SicilyLines
         // Tous les composants du Form1
         private void listBoxSecteur_SelectedIndexChanged(object sender, EventArgs e)
         {
-            affiche();
+            var index = listBoxSecteur.SelectedItem as Secteur;
+            Console.WriteLine(index.id);
+            sLiaison = monManager.ChargementliaisonBD(index.id);
+            afficheLiaison();
         }
 
         private void listBoxResLiaison_SelectedIndexChanged(object sender, EventArgs e)

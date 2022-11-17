@@ -26,7 +26,7 @@ namespace Connecte.DAL
 
 
         private static MySqlCommand Ocom;
-        
+
         // Ajout d'un secteur
         public void ajoutSecteur(String unLibelle)
         {
@@ -73,7 +73,7 @@ namespace Connecte.DAL
                 maConnexionSql.openConnection();
 
 
-                Ocom = maConnexionSql.reqExec("DELETE FROM secteur WHERE libelle='" + supLibelle +"'");
+                Ocom = maConnexionSql.reqExec("DELETE FROM secteur WHERE libelle='" + supLibelle + "'");
 
 
                 int p = Ocom.ExecuteNonQuery();
@@ -165,65 +165,93 @@ namespace Connecte.DAL
         // Récupération de la liste des secteurs
         public static List<Secteur> getSecteur()
         {
-
             List<Secteur> lc = new List<Secteur>();
 
             try
             {
-
                 maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
-
-
                 maConnexionSql.openConnection();
-
-
                 Ocom = maConnexionSql.reqExec("Select * from Secteur");
-
-
                 MySqlDataReader reader = Ocom.ExecuteReader();
-
                 Secteur s;
-
-
-
 
                 while (reader.Read())
                 {
-
                     string numero = (string)reader.GetValue(0);
                     string libelle = (string)reader.GetValue(1);
-
                     //Instanciation d'un Secteur
                     s = new Secteur(numero, libelle);
-
                     // Ajout de ce secteur à la liste 
                     lc.Add(s);
-
-
                 }
-
-
-
                 reader.Close();
-
                 maConnexionSql.closeConnection();
-
                 // Envoi de la liste au Manager
                 return (lc);
-
-
             }
-
             catch (Exception sec)
             {
-
                 throw (sec);
+            }
+        }
+
+        //permet de chercher le secteur grace a wantedid
+        public Secteur getSecteurById(string WantedId)
+        {
+
+            try
+            {
+                maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
+                maConnexionSql.openConnection();
+                Ocom = maConnexionSql.reqExec("Select * from Secteur Where ID = " + WantedId);
+                MySqlDataReader reader2 = Ocom.ExecuteReader();
+                Object[] values = new Object[reader2.FieldCount];
+                while (reader2.Read())
+                {
+                    reader2.GetValues(values);
+                    reader2.Close();
+                    maConnexionSql.closeConnection();
+                    //string unId, string unIdR, string unIdD, string unIdA, string unIdP, String uneDuree
+                    return new Secteur(values[0].ToString(), values[1].ToString());
+                }
+                return null;
 
             }
-
+            catch (Exception sec)
+            {
+                throw (sec);
+            }
+            return null;
 
         }
 
+        public Secteur setSecteurById(string WantedId)
+        {
+
+            try
+            {
+                maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
+                maConnexionSql.openConnection();
+                Ocom = maConnexionSql.reqExec("Delete from Secteur Where ID = " + WantedId);
+                MySqlDataReader reader2 = Ocom.ExecuteReader();
+                Object[] values = new Object[reader2.FieldCount];
+                while (reader2.Read())
+                {
+                    reader2.GetValues(values);
+                    reader2.Close();
+                    maConnexionSql.closeConnection();
+                    //string unId, string unIdR, string unIdD, string unIdA, string unIdP, String uneDuree
+                    return new Secteur(values[0].ToString(), values[1].ToString());
+                }
+                return null;
+
+            }
+            catch (Exception sec)
+            {
+                throw (sec);
+            }
+            return null;
+        }
     }
 }
 

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Connecte.Modele
 {
-    class Liaison
+    public class Liaison
     {
-        private string id;
+        public string id { get; }
         private string id_Regrouper;
-        private string id_Depart;
-        private string id_Arrivee;
+        public string id_Depart;
+        public string id_Arrivee;
         private string id_Port;
         private String duree;
+        public string Description2 { get; set; }
 
         public Liaison(string unId, string unIdR, string unIdD, string unIdA, string unIdP, String uneDuree)
         {
@@ -23,6 +24,7 @@ namespace Connecte.Modele
             this.id_Arrivee = unIdA;
             this.id_Port = unIdP;
             this.duree = uneDuree;
+            this.Description2 = "Id : " + this.id + " Duree :" + this.duree;
         }
 
         public String getDuree()
@@ -32,11 +34,6 @@ namespace Connecte.Modele
         public void setDuree(String uneDuree)
         {
             this.duree = uneDuree;
-        }
-
-        public string Description2
-        {
-            get => "Id : " + this.id + " Duree :" + this.duree;
         }
     }
 }

@@ -11,16 +11,25 @@ namespace Connecte.Controleur
     public class Mgr
     {
         secteurDAO secDAO = new secteurDAO();
+        LiaisonDAO liaisonDAO = new LiaisonDAO();
 
-        List<Secteur> maListeSecteur;
-
+        public List<Secteur> maListeSecteur;
+        /**/public List<Liaison> maListeLiaison;
         public Mgr()
         {
 
             maListeSecteur = new List<Secteur>();
+            /**/
+            maListeLiaison = new List<Liaison>();
         }
 
+        /*public List<Liaison> chargementSLiaisonBD()
+        {
 
+            maListeLiaison = secteurDAO.getLiaison();
+
+            return (maListeLiaison);
+        }*/
 
         // Récupération de la liste des secteurs à partir de la DAL
         public List<Secteur> chargementSecBD()
@@ -29,6 +38,23 @@ namespace Connecte.Controleur
             maListeSecteur = secteurDAO.getSecteur();
 
             return (maListeSecteur);
+        }
+        public List<Liaison> ChargementliaisonBD(string WantedID)
+        {
+
+            maListeLiaison = LiaisonDAO.getLiaison(WantedID);
+
+            return (maListeLiaison);
+        }
+
+        public Secteur GetSecteurById(string WantedId)
+        {
+            return secDAO.getSecteurById(WantedId);
+        }
+
+        public Secteur SetSecteurById(string WantedId)
+        {
+            return secDAO.setSecteurById(WantedId);
         }
 
 
@@ -39,5 +65,13 @@ namespace Connecte.Controleur
             secteurDAO.updateSecteur(s);
 
         }
+
+        //Suppression d'un secteur
+        /*public void supprimerSecteur(Secteur s)
+        {
+
+            secteurDAO.supprimerSecteur(s);
+
+        }*/
     }
 }

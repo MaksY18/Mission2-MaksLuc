@@ -8,8 +8,8 @@ namespace Connecte.Modele
 {
     public class Secteur
     {
-        private string id;
-        private String libelle;
+        public string id;
+        public String libelle;
         private String login;
 
         public string Login { get => login; set => login = value; }

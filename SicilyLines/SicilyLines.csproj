@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controleur\Mgr.cs" />
+    <Compile Include="DAL\LiaisonDAO.cs" />
     <Compile Include="Modele\Categorie.cs" />
     <Compile Include="Modele\Bateau.cs" />
     <Compile Include="DAL\secteurDAO.cs" />
